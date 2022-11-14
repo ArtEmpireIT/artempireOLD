@@ -1,0 +1,49 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint ./**/*.js",
+    "fixlint": "./node_modules/.bin/eslint ./**/*.js --fix",
+    "generate": "node ./bin/seq_generate.js",
+    "sqlfunctions": "node ./bin/functions.js",
+    "frontmodels": "node ./bin/front_generate.js > ../backend/src/app/models/all.ts",
+    "frontservices": "node ./bin/services_generator.js > ../backend/src/app/services/all.ts",
+    "refresh": "npm run generate && npm run frontmodels && npm run frontservices",
+    "front": "npm run frontmodels && npm run frontservices",
+    "start": "node app.js",
+    "start-debug": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "body-parser": "^1.16.1",
+    "cors": "^2.8.5",
+    "debug": "^2.6.3",
+    "epilogue": "^0.7.1",
+    "express": "^4.14.1",
+    "express-fileupload": "^0.1.2",
+    "express-jwt": "^5.3.1",
+    "express-validator": "^3.2.1",
+    "gm": "^1.23.1",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "pg": "^6.1.4",
+    "pg-hstore": "^2.3.2",
+    "redis": "^2.7.1",
+    "sequelize": "^3.30.2",
+    "sequelize-auto": "^0.4.25",
+    "sequelize-redis-cache": "^2.0.0",
+    "shelljs": "^0.7.7",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "nodemon": "^1.18.11"
+  }
+}

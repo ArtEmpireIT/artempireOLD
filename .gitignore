@@ -1,0 +1,9 @@
+.DS_Store
+.sublime-project
+.sublime-workspace
+.idea
+.vscode
+node_modules
+npm-debug.log
+backend/src/app/config/config.ts
+api/db/dump.sql
